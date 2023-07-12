@@ -26,4 +26,6 @@ En nuestro caso lo ideal es que no nos pida la confirmacion de password del usua
 
 
 ### Install anydesk
-Deberemos mencionar que en la version  37 de fedora, hemos tenido inconvenientes al instalar del paquete rpm de anydesk, esperamos que esto no pase en fedora 38, pero vamos a tratar de documentar lo que nos pase y saber como corregirlos
+Deberemos mencionar que en la version  37 de fedora, hemos tenido inconvenientes al instalar del paquete rpm de anydesk, esperamos que esto no pase en fedora 38, pero vamos a tratar de documentar lo que nos pase y saber como corregirlos.
+
+[anydesk downloads linux](https://anydesk.com/en/downloads/linux)
