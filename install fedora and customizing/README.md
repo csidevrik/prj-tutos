@@ -19,7 +19,9 @@ Oh My Zsh is a delightful, open source, community-driven framework for managing 
 [OH MY ZSH](https://ohmyz.sh/)
 
 En nuestro caso lo ideal es que no nos pida la confirmacion de password del usuario pero como lo ven en fedora 38 al parecer ya no fue necesario, no si sea porque es maquina virtual, esto habrá que comprobarlo en una maquina fisica.
-https://github.com/carlossiguam/prj-tutos/blob/main/install%20fedora%20and%20customizing/assets/Screenshot%20from%202023-07-12%2006-49-40_FED38_install%20ohmy%20zsh.png
+
+
+![Alt text](https://github.com/carlossiguam/prj-tutos/blob/main/install%20fedora%20and%20customizing/assets/Screenshot%20from%202023-07-12%2006-49-40_FED38_install%20ohmy%20zsh.png "Install oh my zsh")
 
 
 
