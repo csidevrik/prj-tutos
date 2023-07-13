@@ -29,3 +29,20 @@ En nuestro caso lo ideal es que no nos pida la confirmacion de password del usua
 Deberemos mencionar que en la version  37 de fedora, hemos tenido inconvenientes al instalar del paquete rpm de anydesk, esperamos que esto no pase en fedora 38, pero vamos a tratar de documentar lo que nos pase y saber como corregirlos.
 
 [anydesk downloads linux](https://anydesk.com/en/downloads/linux)
+
+Entonces seleccionamos o usamos el rpm repository 
+
+[anydesk rpm repository](http://rpm.anydesk.com/howto.html)
+
+Hay que convertirse en root para ejecutar las lineas para fedora, las lineas que se mencionan en la URL anterior
+
+```shell
+cat > /etc/yum.repos.d/AnyDesk-Fedora.repo << "EOF" 
+[anydesk]
+name=AnyDesk Fedora - stable
+baseurl=http://rpm.anydesk.com/fedora/$basearch/
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://keys.anydesk.com/repos/RPM-GPG-KEY
+EOF
+```
