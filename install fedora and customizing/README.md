@@ -46,3 +46,8 @@ repo_gpgcheck=1
 gpgkey=https://keys.anydesk.com/repos/RPM-GPG-KEY
 EOF
 ```
+
+```shell
+sudo dnf update
+```
+
