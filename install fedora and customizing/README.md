@@ -65,7 +65,16 @@ Ahora tenemos que encontrar esta libreria descargarla e instalarla.
 En este foro [Pablo Two] nos sugiere instalar el paquete rpm de anydesk sin tomar en cuenta la dependencia de libgtkglext
 
 Entonces primero tenemos que descargar la libreria de anydesk
-Descargue su paquete desde aqui: [libgtklgext64]
-https://download.anydesk.com/linux/
+Descargue su paquete desde aqui: [anydesk downloads](https://download.anydesk.com/linux/)
 
-Intentaremos primero con esta 
+
+```shell
+➜  wget http://mirror.centos.org/centos/7/os/x86_64/Packages/mesa-libGLU-devel-9.0.0-4.el7.x86_64.rpm
+➜  sudo rpm -i mesa-libGLU-devel-9.0.0-4.el7.x86_64.rpm 
+➜  sudo dnf install mesa-libGLU  
+wget https://rpmfind.net/linux/opensuse/distribution/leap/15.4/repo/oss/x86_64/libgtkglext-x11-1_0-0-1.2.0git20110529-150400.12.8.x86_64.rpm
+➜  sudo rpm -i libgtkglext-x11-1_0-0-1.2.0git20110529-150400.12.8.x86_64.rpm
+➜  sudo rpm -i libgtkglext-x11-1_0-0-1.2.0git20110529-150400.12.8.x86_64.rpm
+➜  wget https://download.anydesk.com/linux/anydesk_6.2.1-1_x86_64.rpm
+➜  sudo rpm -i anydesk_6.2.1-1_x86_64.rpm 
+```
