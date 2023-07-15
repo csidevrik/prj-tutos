@@ -55,3 +55,17 @@ Luego de esto usamos
 
 
 ![Alt text](https://github.com/carlossiguam/prj-tutos/blob/main/install%20fedora%20and%20customizing/assets/install%20anydesk%20cli%20response.png "Install anydesk from cli")
+
+Como podemos evidenciar no se instala anydesk porque falta algun repositorio que brinde la libreria libgtkglext-x11-1_0-0
+
+Ahora tenemos que encontrar esta libreria descargarla e instalarla.
+
+#### Method 1 removing libgtklgext from dependencies
+
+En este foro [Pablo Two] nos sugiere instalar el paquete rpm de anydesk sin tomar en cuenta la dependencia de libgtkglext
+
+Entonces primero tenemos que descargar la libreria de anydesk
+Descargue su paquete desde aqui: [libgtklgext64]
+https://download.anydesk.com/linux/
+
+Intentaremos primero con esta 
