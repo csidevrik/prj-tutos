@@ -51,3 +51,7 @@ EOF
 sudo dnf update
 ```
 
+Luego de esto usamos
+
+
+![Alt text](https://github.com/carlossiguam/prj-tutos/blob/main/install%20fedora%20and%20customizing/assets/install%20anydesk%20cli%20response.png "Install anydesk from cli")
