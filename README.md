@@ -3,10 +3,11 @@ TUTORIALES CARLOS
 On this repo we show the tutos utiles for me, because is so esaly to create parts of code ok.
 
 ## INTRODUCCION
-Esta pagina trata de introducirnos a como esta organizada este repo de tutoriales. sera como el indice de los tutoriales, tratará de guiarnos para los siguientes tutoriales.
+Este repositorio trata de algunos tutoriales, entre ellos lo que alcanzo a documentar
 
 
 
 
-- [Bashly framework](https://bashly.dannyb.co/)
 
+- [Install mongodb on fedora](https://github.com/carlossiguam/prj-tutos/tree/main/install_mongodb_on_fedora)
+- [Install zabbix on fedora](https://github.com/carlossiguam/prj-tutos/tree/main/install_zabbix_on_fedora/)
