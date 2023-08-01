@@ -63,7 +63,7 @@ max_input_time = 300
 memory_limit 128M
 session.auto_start = 0
 mbstring.func_overload = 0
-date.timezone = Europe/Bucharest
+date.timezone = America/Guayaquil
 ```
 
 
