@@ -5,7 +5,7 @@ Pues este sitio sera util para poder describir el proceso de instalacion de zabb
 ## INTRODUCCION
 Tratare de seguir varias guias hasta llegar a la guia definitiva para fedora, al parecer no existe la definitiva
 
-## Instalar servidor web 
+## Install web server
 En nuestro caso estamos escogiendo nginx el preferido para mis despliegues
 
 ```shell
@@ -36,8 +36,43 @@ sudo firewall-cmd --reload
 Si todo salio bien, veremos la siguiente ventana en el navegador
 ![Alt text](nginxFedora.png)
 
+## Install php libraries
+Como era de esperarse zabbix esta construido con php, por tanto hay que instalar las librerias necesarias para su ejecucion
+
+```shell
+sudo dnf install php-8.2.4-1.fc38.x86_64 php-mysqlnd-8.2.4-1.fc38.x86_64 php-ldap-8.2.4-1.fc38.x86_64 php-bcmath-8.2.4-1.fc38.x86_64 php-mbstring-8.2.4-1.fc38.x86_64 php-gd-8.2.4-1.fc38.x86_64 php-gd-8.2.4-1.fc38.x86_64 php-xml-8.2.4-1.fc38.x86_64
+```
+![Alt text](php-libraries.png)
+
+
+### Modificar el archivo php.ini
+El archivo php.ini, contiene directivas para el uso de php al desplegarse la aplicacion en php, en esta caso zabbix
+Para modificar el archivo `php.ini` se debe ingresar a este con un editor en este caso nvim
+
+```bash
+sudo nvim /etc/php.ini
+```
+
+Encontramos las siguientes lineas que debemos cambiar:
+
+```text
+post_max_size = 16M
+upload_max_filesize = 2M
+max_execution_time 300
+max_input_time = 300
+memory_limit 128M
+session.auto_start = 0
+mbstring.func_overload = 0
+date.timezone = Europe/Bucharest
+```
+
 
 
 ## BIBLIOGRAFIA
 
 [tutorial para centOS](https://www.tecmint.com/install-and-configure-zabbix-monitoring-on-debian-centos-rhel/)
+
+[documentation official zabbix database](https://www.zabbix.com/documentation/6.4/en/manual/appendix/install/db_scripts)
+
+[zabbix packages](https://www.zabbix.com/download?zabbix=6.4&os_distribution=red_hat_enterprise_linux&os_version=9&components=server_frontend_agent&db=mysql&ws=apache)
+
