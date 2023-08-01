@@ -33,11 +33,9 @@ Reload to apply new settings
 sudo firewall-cmd --reload
 ```
 
-Si todo salio bien
-
-
-
+Si todo salio bien, veremos la siguiente ventana en el navegador
 ![Alt text](nginxFedora.png)
+
 
 
 ## BIBLIOGRAFIA
