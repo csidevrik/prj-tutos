@@ -117,7 +117,7 @@ sudo mysql_secure_installation
 >
 >You already have your root account protected, so you can safely answer 'n'.
 >
->>Change the root password? [Y/n] n
+>>Change the root password? [Y/n] **n**
 > ... skipping.
 >
 >By default, a MariaDB installation has an anonymous user, allowing anyone
@@ -126,20 +126,20 @@ sudo mysql_secure_installation
 >go a bit smoother.  You should remove them before moving into a
 >production environment.
 >
->>Remove anonymous users? [Y/n] Y
+>>Remove anonymous users? [Y/n] **Y**
 > ... Success!
 >
 >Normally, root should only be allowed to connect from 'localhost'.  This
 >ensures that someone cannot guess at the root password from the network.
 >
->>Disallow root login remotely? [Y/n] Y
+>>Disallow root login remotely? [Y/n] **Y**
 > ... Success!
 >
 >By default, MariaDB comes with a database named 'test' that anyone can
 >access.  This is also intended only for testing, and should be removed
 >before moving into a production environment.
 >
->>Remove test database and access to it? [Y/n] Y
+>>Remove test database and access to it? [Y/n] **Y**
 > - Dropping test database...
 > ... Success!
 > - Removing privileges on test database...
@@ -148,7 +148,7 @@ sudo mysql_secure_installation
 >Reloading the privilege tables will ensure that all changes made so far
 >will take effect immediately.
 >
->>Reload privilege tables now? [Y/n] Y
+>>Reload privilege tables now? [Y/n] **Y**
 > ... Success!
 >
 >Cleaning up...
