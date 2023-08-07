@@ -158,7 +158,7 @@ sudo mysql_secure_installation
 >
 >Thanks for using MariaDB!
 
-
+![Alt text](prueba.png)
 
 
 ![Alt text](mysqlenableservice.png)
