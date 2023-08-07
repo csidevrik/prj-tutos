@@ -1,0 +1,29 @@
+TIPS FOR SEARCHING
+------------------------------------------------
+Sobre este archivo mostrare algunos tips que me son utiles para linux
+## INTRODUCCION
+Algunos comandos en linux nos ayudan a ejecutar algunas cosas en linux 
+
+
+### Tips Linux Search commands
+Siempre necesitaremos buscar en linux alguna o algunas palabras y a veces presumimos un directorio en donde buscar, pues lo intentaremos de la siguiente manera.
+
+```shell
+sudo grep -r "palabra" /ruta/del/directorio
+```
+Donde ruta del directorio es obviamente el directorio donde presumimos puede tener la palabra algun archivo dentro de ese directorio.
+
+Veamos un ejemplo
+Quiero buscar la la palabra metadata dentro del directorio 
+```shell
+➜  ~ sudo grep -r "metadata" /etc/yum.repos.d
+```
+![Alt text](pictures/grepRresult.png)
+
+
+
+## BIBLIOGRAFIA
+
+[Tecmint](https://www.tecmint.com/35-practical-examples-of-linux-find-command/)
+[FREECODECAMP](https://www.freecodecamp.org/news/how-to-search-for-files-from-the-linux-command-line/)
+[IONOS](https://www.ionos.es/digitalguide/servidores/configuracion/comando-linux-find/)
