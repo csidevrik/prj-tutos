@@ -7,6 +7,7 @@ Pues este sitio sera util para poder describir el proceso de instalacion de zabb
 # 1 INTRODUCCION
 
 Tratare de seguir varias guias hasta llegar a la guia definitiva para fedora, al parecer no existe la definitiva
+
 ---
 # 2 INSTALL WEB SERVER
 Estamos prefiriendo nginx para todo tipo de despliegue
