@@ -1,6 +1,8 @@
-How to install zabbix on fedora 
+How to install zabbix on fedora 38 
 ------------------------------------------------
 Pues este sitio sera util para poder describir el proceso de instalacion de zabbix sobre fedora.
+
+
 
 # 1 INTRODUCCION
 Tratare de seguir varias guias hasta llegar a la guia definitiva para fedora, al parecer no existe la definitiva
@@ -87,7 +89,14 @@ sudo dnf clean  all
 ```shell
 dnf install zabbix-server-mysql zabbix-web-mysql zabbix-nginx-conf zabbix-sql-scripts zabbix-selinux-policy zabbix-agent
 ```
+~~~
+sudo systemctl enable zabbix-server-mysql
+sudo systemctl start zabbix-server-mysql
+sudo systemctl status zabbix-server-mysql
+~~~
+
 Verificar que puedas levantar el servicio antes de la instalacion y configuracion de la base de datos, debe quedarte algo mas o menos asi.
+
 ![Alt text](zabbix-server-enabled.png)
 
 ---
