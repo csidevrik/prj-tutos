@@ -222,6 +222,7 @@ MariaDB [(none)]> quit;
 ![Alt text](zabbix-server-configurationDB.png)
 
 Verifica la siguiente informacion en el archivo mencionado anteriormente, descomentala si es necesario.
+
 >DBHost=localhost
 >DBPort=3306
 >DBUser=zabbix
