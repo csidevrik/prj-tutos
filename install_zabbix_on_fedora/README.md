@@ -2,12 +2,11 @@ How to install zabbix on fedora
 ------------------------------------------------
 Pues este sitio sera util para poder describir el proceso de instalacion de zabbix sobre fedora.
 
-## INTRODUCCION
+# 1 INTRODUCCION
 Tratare de seguir varias guias hasta llegar a la guia definitiva para fedora, al parecer no existe la definitiva
-
-## Install web server
-En nuestro caso estamos escogiendo nginx el preferido para mis despliegues
-
+---
+# 2 INSTALL WEB SERVER
+Estamos prefiriendo nginx para todo tipo de despliegue
 ```shell
 sudo dnf -y install nginx
 ```
@@ -22,7 +21,7 @@ server does.
 sudo systemctl enable nginx
 sudo systemctl start nginx
 ```
-### Open the firewall for nginx
+## 2.1 Open firewall port for nginx
 
 ```shell
 sudo firewall-cmd --permanent --add-service=http
@@ -36,7 +35,7 @@ sudo firewall-cmd --reload
 Si todo salio bien, veremos la siguiente ventana en el navegador
 ![Alt text](nginxFedora.png)
 
-## Install php libraries
+## 2.2 Install php libraries
 Como era de esperarse zabbix esta construido con php, por tanto hay que instalar las librerias necesarias para su ejecucion
 
 ```shell
@@ -45,7 +44,7 @@ sudo dnf install php-8.2.4-1.fc38.x86_64 php-mysqlnd-8.2.4-1.fc38.x86_64 php-lda
 ![Alt text](php-libraries.png)
 
 
-### Modificar el archivo php.ini
+## 2.3 Modificar el archivo php.ini
 
 
 El archivo php.ini, contiene directivas para el uso de php al desplegarse la aplicacion en php, en esta caso zabbix
@@ -71,53 +70,53 @@ memory_limit 128M
 session.auto_start = 0
 mbstring.func_overload = 0
 date.timezone = America/Guayaquil
-
 ```
-## Install Zabbix packages
+---
+# 3 Install Zabbix packages
 
-
-Instalar zabbix, para instalar zabbix en fedora me estoy basando en rocky linux mirenlo en la siguiente captura
-
+Instalar zabbix, para instalar zabbix en fedora me estoy basando en rocky linux, mirenlo en la siguiente captura
 
 ![Alt text](zabbix-platform-chosed.png)
 
-### Install zabbix repository
-
+## 3.1 Install zabbix repository
+```shell
 sudo rpm -Uvh https://repo.zabbix.com/zabbix/6.0/rhel/9/x86_64/zabbix-release-6.0-4.el9.noarch.rpm
 sudo dnf clean  all
-
-### Install zabbix server, frontend, agent
-
-
+```
+## 3.2 Install zabbix server, frontend, agent
+```shell
+dnf install zabbix-server-mysql zabbix-web-mysql zabbix-nginx-conf zabbix-sql-scripts zabbix-selinux-policy zabbix-agent
+```
+Verificar que puedas levantar el servicio antes de la instalacion y configuracion de la base de datos, debe quedarte algo mas o menos asi.
 ![Alt text](zabbix-server-enabled.png)
 
-## Install Database
+---
+# 4 Install Database
+Como digimos vamos a instalar mariadb-server que es la version de community
 ```shell
 sudo dnf install mariadb-server
 ```
 Si todo va bien veremos los siguientes paquetes instalados
 ![Alt text](mariadbserverpackage.png)
-[optional]
-```shell
-sudo dnf install mariadb-server-3:10.5.18-1.fc38.x86_64 mariadb-3:10.5.18-1.fc38.x86_64 
-```
+>[optional]
+>```shell
+>sudo dnf install mariadb-server-3:10.5.18-1.fc38.x86_64 mariadb-3:10.5.18-1.fc38.x86_64 
+>```
 En el caso que hayas instalado los paquetes anteriores y no hayas iniciado el servicio de mariadb, pues es esto lo que te pasar[a]
 ![Alt text](mysql-secure-installationC.png)
 
-### Levantar el servicio de la base de datos
+## 4.1 Levantar el servicio de la base de datos
 ```shell
 sudo systemctl enable mariadb.service 
 sudo systemctl start mariadb.service
 sudo systemctl status mariadb.service
 ```
-
-
-### Configurando Mariadb
+## 4.2 Asegurando Mariadb
 
 ```shell
 sudo mysql_secure_installation       
 ```
-
+Trata de ponerle asi como estamos indicando a continuacion
 >NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
       SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
 >
@@ -183,18 +182,19 @@ sudo mysql_secure_installation
 
 >Change the root password
 
-tremebund0.#
 
-### Create initial database
+## 4.3 Create initial database
 ```shell
+sudo mysql -uroot -p
+password
 MariaDB [(none)]> create database zabbix character set utf8mb4 collate utf8mb4_bin;
-MariaDB [(none)]> create user zabbix@localhost identified by 'tremebund0.#';
+MariaDB [(none)]> create user zabbix@localhost identified by 'password';
 MariaDB [(none)]> grant all privileges on zabbix.* to zabbix@localhost;
 MariaDB [(none)]> set global log_bin_trust_function_creators = 1;
 MariaDB [(none)]> quit;
 ```
 
-#### Import Initital schema and data
+## 4.4 Import Initital schema and data
 ```shell
 sudo zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p zabbix
 ```
@@ -204,15 +204,14 @@ MariaDB [(none)]> set global log_bin_trust_function_creators = 0;
 MariaDB [(none)]> quit;
 ```
 
-#### Configure database for Zabbix-server-mysql
+# 5 CONFIGURE DATABASE for service zabbix-server-mysql
 
 ```shell
 ➜  ~ sudo nvim /etc/zabbix_server.conf
 ```
 
 ![Alt text](zabbix-server-configurationDB.png)
-como se muestra en la imagen anterior debemos agregar la informacion correspondiente a las configuraciones 
-
+Verifica la siguiente informacion en el archivo mencionado anteriormente, descomentala si es necesario.
 >DBHost=localhost
 >DBPort=3306
 >DBUser=zabbix
@@ -220,7 +219,7 @@ como se muestra en la imagen anterior debemos agregar la informacion correspondi
 >DBSocket=/var/run/mysqld/mysqld.sock
 >DBName=zabbix
 
-
+# 6 CONFIGURE ZABBIX FOR LA WEB
 ```shell
 sudo firewall-cmd --permanent --add-service=mysql --zone=FedoraServer
 sudo firewall-cmd --permanent --add-port=8080/tcp --zone=FedoraServer
@@ -229,17 +228,12 @@ sudo firewall-cmd --permanent --add-port=8080/tcp --zone=FedoraServer
 ```shell
 sudo reboot
 ```
-
-
-
 ><IP>/setup.php
 
 Al final te tiene que resultar algo asi
 ![Alt text](zabbix-install-gui.png)
 
-<video src="Installation%20-%20Google%20Chrome%202023-08-11%2013-54-44.mp4" controls title="Title"></video>
-
-
+[Zabbix configuration](https://www.youtube.com/watch?v=CRumbty3gpI)
 
 
 
