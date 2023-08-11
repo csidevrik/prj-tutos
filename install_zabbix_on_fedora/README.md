@@ -227,7 +227,7 @@ sudo firewall-cmd --permanent --add-port=8080/tcp --zone=FedoraServer
 ```
 
 ```shell
-
+sudo reboot
 ```
 
 
