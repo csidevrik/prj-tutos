@@ -5,6 +5,7 @@ Pues este sitio sera util para poder describir el proceso de instalacion de zabb
 
 
 # 1 INTRODUCCION
+
 Tratare de seguir varias guias hasta llegar a la guia definitiva para fedora, al parecer no existe la definitiva
 ---
 # 2 INSTALL WEB SERVER
@@ -247,14 +248,6 @@ Al final te tiene que resultar algo asi
 [Zabbix configuration](https://www.youtube.com/watch?v=CRumbty3gpI)
 
 
-
-
-
-### Configura un usuario administrador para poder usar y configurar la base desde un cliente gui de DB por ejemplo Dbeaver
-
-![Alt text](remoteuserDB.png)
-
-![Alt text](testConnectionDB.png)
 ## BIBLIOGRAFIA
 
 [tutorial para centOS](https://www.tecmint.com/install-and-configure-zabbix-monitoring-on-debian-centos-rhel/)
