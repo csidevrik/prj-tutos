@@ -71,7 +71,26 @@ memory_limit 128M
 session.auto_start = 0
 mbstring.func_overload = 0
 date.timezone = America/Guayaquil
+
 ```
+## Install Zabbix packages
+
+
+Instalar zabbix, para instalar zabbix en fedora me estoy basando en rocky linux mirenlo en la siguiente captura
+
+
+![Alt text](zabbix-platform-chosed.png)
+
+### Install zabbix repository
+
+sudo rpm -Uvh https://repo.zabbix.com/zabbix/6.0/rhel/9/x86_64/zabbix-release-6.0-4.el9.noarch.rpm
+sudo dnf clean  all
+
+### Install zabbix server, frontend, agent
+
+
+![Alt text](zabbix-server-enabled.png)
+
 ## Install Database
 ```shell
 sudo dnf install mariadb-server
@@ -88,6 +107,8 @@ En el caso que hayas instalado los paquetes anteriores y no hayas iniciado el se
 ### Levantar el servicio de la base de datos
 ```shell
 sudo systemctl enable mariadb.service 
+sudo systemctl start mariadb.service
+sudo systemctl status mariadb.service
 ```
 
 
@@ -158,10 +179,77 @@ sudo mysql_secure_installation
 >
 >Thanks for using MariaDB!
 
-
-
-
 ![Alt text](mysqlenableservice.png)
+
+>Change the root password
+
+tremebund0.#
+
+### Create initial database
+```shell
+MariaDB [(none)]> create database zabbix character set utf8mb4 collate utf8mb4_bin;
+MariaDB [(none)]> create user zabbix@localhost identified by 'tremebund0.#';
+MariaDB [(none)]> grant all privileges on zabbix.* to zabbix@localhost;
+MariaDB [(none)]> set global log_bin_trust_function_creators = 1;
+MariaDB [(none)]> quit;
+```
+
+#### Import Initital schema and data
+```shell
+sudo zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p zabbix
+```
+
+```shell
+MariaDB [(none)]> set global log_bin_trust_function_creators = 0;
+MariaDB [(none)]> quit;
+```
+
+#### Configure database for Zabbix-server-mysql
+
+```shell
+➜  ~ sudo nvim /etc/zabbix_server.conf
+```
+
+![Alt text](zabbix-server-configurationDB.png)
+como se muestra en la imagen anterior debemos agregar la informacion correspondiente a las configuraciones 
+
+>DBHost=localhost
+>DBPort=3306
+>DBUser=zabbix
+>DBPassword=<PASSWORD>#
+>DBSocket=/var/run/mysqld/mysqld.sock
+>DBName=zabbix
+
+
+```shell
+sudo firewall-cmd --permanent --add-service=mysql --zone=FedoraServer
+sudo firewall-cmd --permanent --add-port=8080/tcp --zone=FedoraServer
+```
+
+```shell
+
+```
+
+
+
+><IP>/setup.php
+
+Al final te tiene que resultar algo asi
+![Alt text](zabbix-install-gui.png)
+
+<video src="Installation%20-%20Google%20Chrome%202023-08-11%2013-54-44.mp4" controls title="Title"></video>
+
+
+
+
+
+
+
+### Configura un usuario administrador para poder usar y configurar la base desde un cliente gui de DB por ejemplo Dbeaver
+
+![Alt text](remoteuserDB.png)
+
+![Alt text](testConnectionDB.png)
 ## BIBLIOGRAFIA
 
 [tutorial para centOS](https://www.tecmint.com/install-and-configure-zabbix-monitoring-on-debian-centos-rhel/)
