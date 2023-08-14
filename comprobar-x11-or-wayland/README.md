@@ -11,14 +11,14 @@ Usar loginctl para mirar nuestra ID de sesion y:
 ```
 Aunque aqui tuve un problema, ya que no se cual es el id de session para eso utilice lo que me indica el comando de loginctl en la cual tenemos tres opciones
 
-![Alt text](</images/loginctl-options.png>)
+![Alt text](/images/loginctl-options.png)
 de las cuales escogi la que dice list-session 
 
 ```shell
     loginctl list-session
 ```
 Ahora si  todo funciono, mira lo que me salio
-![Alt text](</images/list-session.png>)
+![Alt text](/images/list-session.png)
 
 ## METHOD 2
 Este metodo es mas rapido sin tanta vuelta, pero igual te lo comparto quiza te interese.
