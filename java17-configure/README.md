@@ -1,0 +1,6 @@
+CONFIGURE JAVA 17 
+Como es conocido por este año trabajo en el sector publico muy para mi pesar lucho contra marea.
+
+Pero bueno quiero utilizar java 17 pero me he topado que ya no hay con java 17 el aplicativo para windows en el cual podias configurar sitios de confianza para java, comparto la siguiente imagen si queda alguna duda.
+
+[Title](https://www.google.com/imgres?imgurl%253Dhttps%253A%252F%252Fkb.leaseweb.com%252Ffiles%252F35127482%252F35127486%252F1%252F1620648563381%252Fjava_control_panel.PNG%2526tbnid%253D9TqT4CWPc3AxJM%2526vet%253D12ahUKEwjo8JLi8d2AAxUdZjABHblbAKcQMygGegQIARBd..i%2526imgrefurl%253Dhttps%253A%252F%252Fkb.leaseweb.com%252Fproducts%252Fdedicated-server%252Fremote-management-of-your-dedicated-server%252Fhow-to-configure-and-utilize-the-java-virtual-console%253Fpreview%253D%25252F35127482%25252F35127489%25252Fjava_add_ip.PNG%2526docid%253DqLbvPl9E1rbPeM%2526w%253D529%2526h%253D559%2526q%253Dconfigure%2520java%2526client%253Dfirefox-b-d%2526ved%253D2ahUKEwjo8JLi8d2AAxUdZjABHblbAKcQMygGegQIARBd)
