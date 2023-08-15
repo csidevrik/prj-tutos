@@ -78,7 +78,7 @@ date.timezone = America/Guayaquil
 ---
 # 3 Install Zabbix packages
 
-Instalar zabbix, para instalar zabbix en fedora me estoy basando en rocky linux, mirenlo en la siguiente captura
+Zabbix tiene unos servicios propios para su funcionamiento que los puedes bajar directamente para la distribucion que hayas escogido, como he mencionado a mi me agrada bastante la distribucion de fedora y por eso eligo una muy similar que es rocky linux, puedes revisarlo en la siguiente imagen.
 
 ![Alt text](zabbix-platform-chosed.png)
 
