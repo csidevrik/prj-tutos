@@ -1,0 +1,25 @@
+<mxfile host="Electron" modified="2023-11-19T22:03:20.090Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="yFp3D9jnuMxa-m-i83mZ" version="21.6.8" type="device">
+  <diagram name="Page-1" id="2oFoFgx67Ha6SGFjVkiy">
+    <mxGraphModel dx="773" dy="685" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="a52Ma6BXgHtZuyZ6-2Qi-2" value="Fedora 38&lt;br&gt;Workstation" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/VM_Linux.svg;" vertex="1" parent="1">
+          <mxGeometry x="130" y="130" width="50" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="a52Ma6BXgHtZuyZ6-2Qi-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="a52Ma6BXgHtZuyZ6-2Qi-3" target="a52Ma6BXgHtZuyZ6-2Qi-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a52Ma6BXgHtZuyZ6-2Qi-3" value="Ubuntu 20.04&lt;br&gt;Desktop" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/VM_Linux_Non_Azure.svg;" vertex="1" parent="1">
+          <mxGeometry x="460" y="130" width="50" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="a52Ma6BXgHtZuyZ6-2Qi-5" value="&lt;font color=&quot;#3333ff&quot;&gt;Aqui se activará Wake-On-LAN&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="112.5" y="210" width="85" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a52Ma6BXgHtZuyZ6-2Qi-6" value="Este en cambio enviará el paquete magico. &lt;br&gt;Mientras esté conectado en red." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="425" y="210" width="120" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
