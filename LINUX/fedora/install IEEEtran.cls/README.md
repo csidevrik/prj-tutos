@@ -36,3 +36,7 @@ Una vez esto esta descargado en la ubicacion senalada, entonces volvemos a ejecu
 ```
 ❯ sudo texhash
 ```
+
+Para usar la plantilla de IEEE podemos usar este link donde obtenemos una buena plantilla 
+
+**[IEEE template wordx](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://ieeeaccess.ieee.org/wp-content/uploads/2024/04/Access-Template-2024.docx&ved=2ahUKEwj_xv2kp-6HAxXSVTABHbLbFsUQFnoECAsQAQ&usg=AOvVaw0o2Ht_woHCjRkusyI8OboI)**
