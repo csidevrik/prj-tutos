@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="join-in-sql.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+
+  <!-- Fondo -->
+  <rect width="100%" height="100%" fill="#1E1E1E" />
+
+  <!-- Título -->
+  <text x="50%" y="20" fill="white" font-size="12" text-anchor="middle" font-family="Arial">JOIN en SQL</text>
+
+  <!-- Diagrama INNER JOIN -->
+  <g transform="translate(20, 50)">
+    <!-- Círculos -->
+    <circle cx="30" cy="30" r="20" fill="white" opacity="0.3"/>
+    <circle cx="50" cy="30" r="20" fill="white" opacity="0.3"/>
+    <circle cx="40" cy="30" r="10" fill="green" opacity="0.7"/>
+    <!-- Texto -->
+    <text x="90" y="35" fill="white" font-size="6" font-family="Arial">INNER JOIN</text>
+    <text x="90" y="45" fill="white" font-size="4" font-family="Arial">SELECT * FROM A INNER JOIN B ON A.key = B.key</text>
+  </g>
+
+  <!-- Diagrama FULL JOIN -->
+  <g transform="translate(20, 100)">
+    <!-- Círculos -->
+    <circle cx="30" cy="30" r="20" fill="white" opacity="0.3"/>
+    <circle cx="50" cy="30" r="20" fill="white" opacity="0.3"/>
+    <path d="M30,30 A20,20 0 1,0 50,30 A20,20 0 1,0 30,30 Z" fill="green" opacity="0.5"/>
+    <!-- Texto -->
+    <text x="90" y="35" fill="white" font-size="6" font-family="Arial">FULL JOIN</text>
+    <text x="90" y="45" fill="white" font-size="4" font-family="Arial">SELECT * FROM A FULL JOIN B ON A.key = B.key</text>
+  </g>
+
+  <!-- Diagrama LEFT JOIN -->
+  <!-- <g transform="translate(20, 150)"> -->
+    <!-- Círculos -->
+    <!-- <circle cx="30" cy="30" r="20" fill="white" opacity="0.3"/> -->
+    <!-- <circle cx="50" cy="30" r="20" fill="white" opacity="0.3"/> -->
+    <!-- <path d="M30,30 A20,20 0 1,0 50,30" fill="green" opacity="0.5"/> -->
+    <!-- Texto -->
+    <!-- <text x="90" y="35" fill="white" font-size="6" font-family="Arial">LEFT JOIN</text> -->
+    <!-- <text x="90" y="45" fill="white" font-size="4" font-family="Arial">SELECT * FROM A LEFT JOIN B ON A.key = B.key</text> -->
+  <!-- </g> -->
+
+  <!-- Diagrama RIGHT JOIN -->
+  <!-- <g transform="translate(20, 200)"> -->
+    <!-- Círculos -->
+    <!-- <circle cx="30" cy="30" r="20" fill="white" opacity="0.3"/> -->
+    <!-- <circle cx="50" cy="30" r="20" fill="white" opacity="0.3"/> -->
+    <!-- <path d="M50,30 A20,20 0 1,0 30,30" fill="green" opacity="0.5"/> -->
+    <!-- Texto -->
+    <!-- <text x="90" y="35" fill="white" font-size="6" font-family="Arial">RIGHT JOIN</text> -->
+    <!-- <text x="90" y="45" fill="white" font-size="4" font-family="Arial">SELECT * FROM A RIGHT JOIN B ON A.key = B.key</text> -->
+  <!-- </g> -->
+
+  <!-- Rectángulo original -->
+  <g transform="translate(150, 250)">
+    <rect style="fill:#260500;stroke-width:0.264583" width="34.473213" height="17.383928" x="9.7232141" y="52.151787" />
+  </g>
+
+</svg>
